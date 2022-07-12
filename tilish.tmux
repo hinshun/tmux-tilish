@@ -186,13 +186,13 @@ else
 	tmux $bind "${mod}${L}" run-shell 'old=`tmux display -p "#{pane_index}"`; tmux select-pane -R; tmux swap-pane -t $old'
 fi
 
-# Open a terminal with Alt + Enter.
+# Open a terminal with Alt + %.
 if [ -z "$legacy" ]
 then
-	tmux $bind "${mod}enter" \
+	tmux $bind "${mod}%" \
 		run-shell 'cwd="`tmux display -p \"#{pane_current_path}\"`"; tmux select-pane -t "bottom-right"; tmux split-pane -c "$cwd"'
 else
-	tmux $bind "${mod}enter" \
+	tmux $bind "${mod}%" \
 		select-pane -t 'bottom-right' \\\;\
 		split-window \\\;\
 		run-shell 'tmux select-layout' \\\;\
