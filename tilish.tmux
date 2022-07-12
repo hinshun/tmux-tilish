@@ -91,7 +91,7 @@ bind_layout () {
 		if [ -z "$legacy" ]
 		then
 			tmux $bind "$1" \
-				select-layout -o "$2" \\\;\
+				select-layout "$2" \\\;\
 				select-layout -E
 		else
 			tmux $bind "$1" \
